@@ -1,0 +1,22 @@
+<br />
+
+<form class="form" ng-submit="upload()">
+	<div class="form-group">
+		<div class="input-group">
+			<div class="input-group-btn">
+				<file-field class="btn" ng-model="uploadFile"
+					ng-class="{'btn-success':uploadFile}" preview="previewImage">选择Excel文件</file-field>
+			</div>
+			<input ng-model="uploadFile.name" type="text"
+				class="file-input form-control " readonly="readonly">
+		</div>
+		<div class="input-group">
+			<p class="help-block">注意：上传数据文件将会覆盖原先数据库.</p>
+		</div>
+		<div class="input-group">
+			<button class="btn btn-primary">上传</button>
+		</div>
+	</div>
+
+</form>
+

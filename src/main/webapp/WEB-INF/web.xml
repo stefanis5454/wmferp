@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
+
+	<display-name>WestSide DataBase</display-name>
+	<description>
+	
+    </description>
+
+	<servlet>
+		<description>
+    	</description>
+		<display-name>SearchProducts</display-name>
+		<servlet-name>SearchProducts</servlet-name>
+		<servlet-class>westside.wmferp.servlets.SearchProducts</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+    	</description>
+		<display-name>WebAppInit</display-name>
+		<servlet-name>WebAppInit</servlet-name>
+		<servlet-class>westside.wmferp.servlets.WebAppInit</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<description>
+    	</description>
+		<display-name>GetProductInfo</display-name>
+		<servlet-name>GetProductInfo</servlet-name>
+		<servlet-class>westside.wmferp.servlets.GetProductInfo</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+    	</description>
+		<display-name>GetBundleInfo</display-name>
+		<servlet-name>GetBundleInfo</servlet-name>
+		<servlet-class>westside.wmferp.servlets.GetBundleInfo</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+    	</description>
+		<display-name>UploadExcelFile</display-name>
+		<servlet-name>UploadExcelFile</servlet-name>
+		<servlet-class>westside.wmferp.servlets.UploadExcelFile</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>UploadImgsFile</display-name>
+		<servlet-name>UploadImgsFile</servlet-name>
+		<servlet-class>westside.wmferp.servlets.UploadImgsFile</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchProducts</servlet-name>
+		<url-pattern>/api/SearchProducts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetProductInfo</servlet-name>
+		<url-pattern>/api/GetProductInfo</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetBundleInfo</servlet-name>
+		<url-pattern>/api/GetBundleInfo</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadExcelFile</servlet-name>
+		<url-pattern>/admin/api/UploadExcelFile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadImgsFile</servlet-name>
+		<url-pattern>/api/UploadImgsFile</url-pattern>
+	</servlet-mapping>
+
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+
+	</welcome-file-list>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>WMF Database</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>wmfuser</role-name>
+		</auth-constraint>
+	</security-constraint>
+		<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>WMF Database Admin</web-resource-name>
+			<url-pattern>/admin/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>wmfadmin</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>WMF Database</realm-name>
+	</login-config>
+
+	<security-role>
+		<description>
+          The role that is required to access to application
+        </description>
+		<role-name>wmfuser</role-name>
+	</security-role>
+		<security-role>
+		<description>
+          The role that is required to access to application
+        </description>
+		<role-name>wmfadmin</role-name>
+	</security-role>
+
+	<filter>
+        <filter-name>UrlRewriteFilter</filter-name>
+        <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>UrlRewriteFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+
+
+
+</web-app>

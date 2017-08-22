@@ -1,0 +1,22 @@
+<br />
+
+<form class="form" ng-submit="uploadImgs()">
+	<div class="form-group">
+		<div class="input-group">
+			<div class="input-group-btn">
+				<file-field class="btn" ng-model="uploadZip"
+					ng-class="{'btn-success':uploadZip}" preview="previewImage">选择压缩包</file-field>
+			</div>
+			<input ng-model="uploadZip.name" type="text"
+				class="file-input form-control " readonly="readonly">
+		</div>
+		<div class="input-group">
+			<p class="help-block">注意：上传压缩包若包含已有ID图片将会覆盖原先图片.</p>
+		</div>
+		<div class="input-group">
+			<button class="btn btn-primary">上传</button>
+		</div>
+	</div>
+
+</form>
+

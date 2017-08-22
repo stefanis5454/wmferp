@@ -1,0 +1,31 @@
+<div>
+	<h3>{{item[itemType+"_name"]}}</h3>
+	<div class="row">
+		<div class="col-md-6 col-xs-12">
+			<img src="../wmfres/imgs/{{itemType}}s/{{item[itemType+'_id']}}.jpg"
+				class="img-rounded">
+		</div>
+		<div class="col-md-6 col-xs-12">
+			<div class="row" ng-repeat="column in columnList">
+				<div class="col-md-3 col-xs-6 h4">{{column.label}}:</div>
+				<div class="col-md-3 col-xs-6 h4">{{item[column.key]}}</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-xs-6 h4">天猫SKU:</div>
+				<div class="col-md-3 col-xs-6 h4">
+					<a href="{{tmLink.preffix + item.tm_sku + tmLink.suffix}} "
+						target="_blank">{{item.tm_sku}}</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-xs-6 h4">京东SKU:</div>
+				<div class="col-md-3 col-xs-6 h4">
+					<a href="{{jdLink.preffix + item.jd_sku + jdLink.suffix}} "
+						target="_blank">{{item.jd_sku}}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<hr>
+</div>

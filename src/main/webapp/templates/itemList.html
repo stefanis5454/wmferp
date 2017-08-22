@@ -1,0 +1,52 @@
+<div>
+	<p ng-hide="(items|filter:$root.searchKey).length>0" class="help-block">无结果</p>
+
+	<div class=".table-responsive">
+		<table class="table table-hover">
+			<thead>
+				<tr ng-show="(items|filter:$root.searchKey).length>0">
+					<th ng-repeat="column in columnList" nowrap="nowrap">{{column.label}}</th>
+					<th nowrap="nowrap">天猫SKU</th>
+					<th nowrap="nowrap">京东SKU</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr
+					ng-repeat="item in items  | filter:$root.searchKey  | limitTo : pageSize : pageSize*(currentPage-1)"
+					class="clickable light">
+
+
+					<td ng-repeat=" column in columnList " ng-click="openItem(item)">{{
+						item[column.key] }}</td>
+					<td><a
+						href="{{tmLink.preffix + item.tm_sku + tmLink.suffix}} "
+						target="_blank">{{item.tm_sku}}</a></td>
+					<td><a
+						href="{{jdLink.preffix + item.jd_sku + jdLink.suffix}} "
+						target="_blank">{{item.jd_sku}}</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="row"
+		ng-show="(items|filter:$root.searchKey).length>pageSize">
+		<div class="col-md-9 col-xs-12">
+			<ul uib-pagination
+				total-items="(items|filter:$root.searchKey).length"
+				items-per-page="pageSize" ng-model="currentPage" max-size="5"
+				class="pagination-md" boundary-link-numbers="true"
+				previous-text="上一页" next-text="下一页"></ul>
+		</div>
+		<div class="col-md-3 col-xs-12">
+
+			<div class="input-group" style="margin: 20px">
+				<span class="input-group-addon" id="basic-addon1">每页行数:</span> <input
+					type="text" class="form-control" ng-model="pageSize">
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

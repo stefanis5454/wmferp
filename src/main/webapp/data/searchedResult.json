@@ -1,0 +1,15 @@
+{
+    "products": [
+        { "product_id": "0522135290", "product_name": "奈彩米快易锅6.5L RDS（红色）", "category": "快易锅", "product_line": "奈彩米", "status": "电商", "product_rrp": 4288, "promotion_price": 1772, "juhuasuan_price": 1968, "daily_price": 2187, "coo": "德国", "tm_sku": "45388774785", "jd_sku": "10451162597" },
+        { "product_id": "0522095290", "product_name": "奈彩米快易锅6.5L   PRO （绿色）", "category": "快易锅", "product_line": "奈彩米", "status": "", "product_rrp": 4988, "promotion_price": 2993, "juhuasuan_price": 3492, "daily_price": 3990, "coo": "德国", "tm_sku": "45389158247", "jd_sku": "10451163118" },
+        { "product_id": "0520305291", "product_name": "奈彩米平底煎锅24cm（玛莎拉红）", "category": "煎锅", "product_line": "奈彩米", "status": "电商", "product_rrp": 1288, "promotion_price": 629, "juhuasuan_price": 699, "daily_price": 777, "coo": "德国", "tm_sku": "520442095770", "jd_sku": "10451157826" },
+        { "product_id": "0514215290", "product_name": "奈彩米汤锅20cm （绿色）", "category": "汤锅", "product_line": "奈彩米", "status": "", "product_rrp": 3288, "promotion_price": 1973, "juhuasuan_price": 2302, "daily_price": 2630, "coo": "德国", "tm_sku": "520062695553", "jd_sku": "10285310285" }
+
+
+    ],
+    "bundles": [
+        { "bundle_id": "012312321354", "bundle_tm_id": "0722112321", "bundle_jd_id": "0922112321", "bundle_name": "奈彩米炒锅平底锅煎锅套装", "total_rrp": 4299, "coo": "混合", "products": ["0522135290", "0520305291", "0514215290"], "product_count": 3, "tm_sku": "530173441389", "jd_sku": "10450385743" },
+        { "bundle_id": "012312432356", "bundle_tm_id": "0722112325", "bundle_jd_id": "0922112325", "bundle_name": "奈彩米汤锅炖锅套装", "total_rrp": 2699, "coo": "混合", "products": ["0522095290", "0514215290"], "product_count": 2, "tm_sku": "532022011620", "jd_sku": "10364898095" }
+
+    ]
+}
